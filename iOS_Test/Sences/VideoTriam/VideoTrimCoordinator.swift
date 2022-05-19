@@ -1,5 +1,5 @@
 //
-//  HomeCoordinator.swift
+//  VideoTrimCoordinator.swift
 //  iOS_Test
 //
 //  Created by Maya on 19/5/22.
@@ -8,14 +8,14 @@
 import Foundation
 import UIKit
 
-final class HomeCoordinator: Coordinator,CoordinatorProtocol {
+final class VideoTrimCoordinator: Coordinator,CoordinatorProtocol {
     
     private(set) var childCoordinators: [CoordinatorProtocol] = []
     private unowned var navigationController: UINavigationController
     public weak var coordinator: CoordinatorProtocol?
-    private unowned var controller: HomeVC
+    private unowned var controller: VideoTrimVC
     
-    init(navigationController: UINavigationController,controller: HomeVC = HomeVC()) {
+    init(navigationController: UINavigationController,controller: VideoTrimVC = VideoTrimVC()) {
         self.navigationController = navigationController
         self.controller = controller
     }
@@ -28,12 +28,8 @@ final class HomeCoordinator: Coordinator,CoordinatorProtocol {
         bindToLifecycle(of: controller)
     }
     
-    func navigateToVideoTrimVCWith(videoUrl: URL){
-        let videoTrimCoordinator = VideoTrimCoordinator(navigationController: self.navigationController)
-        videoTrimCoordinator.start()
+    func popViewController() {
+        self.navigationController.popViewController(animated: true)
     }
     
-    func navigateTomyImagePickerController(vc: UIImagePickerController){
-        controller.present(vc, animated: true, completion: {  })
-    }
 }

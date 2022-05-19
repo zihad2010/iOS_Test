@@ -8,26 +8,210 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--HomeVC-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="tEM-t3-GvV">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="BYZ-38-t0r" customClass="HomeVC" customModule="iOS_Test" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="HomeVC" id="06D-1g-m3V" customClass="HomeVC" customModule="iOS_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D3q-Qm-CWw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gJ-D7-adO" userLabel="navBarcontainer">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZ7-hj-95f" userLabel="nabbar">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kho-sc-Dmy">
+                                                <rect key="frame" x="185.5" y="12" width="43" height="31"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                <state key="normal" title="Home">
+                                                    <color key="titleColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="sip-KK-H4W"/>
+                                            <constraint firstItem="Kho-sc-Dmy" firstAttribute="centerY" secondItem="pZ7-hj-95f" secondAttribute="centerY" id="y0J-rO-bO4"/>
+                                            <constraint firstItem="Kho-sc-Dmy" firstAttribute="centerX" secondItem="pZ7-hj-95f" secondAttribute="centerX" id="yEz-UZ-Bql"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lLv-yA-QKS" userLabel="line">
+                                        <rect key="frame" x="0.0" y="99" width="414" height="0.5"/>
+                                        <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="gZJ-Is-Ijk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="lLv-yA-QKS" secondAttribute="bottom" id="DIt-n8-WWE"/>
+                                    <constraint firstAttribute="trailing" secondItem="lLv-yA-QKS" secondAttribute="trailing" id="Dxi-FN-BhY"/>
+                                    <constraint firstItem="lLv-yA-QKS" firstAttribute="top" secondItem="pZ7-hj-95f" secondAttribute="bottom" id="bVi-4m-4pp"/>
+                                    <constraint firstItem="lLv-yA-QKS" firstAttribute="leading" secondItem="5gJ-D7-adO" secondAttribute="leading" id="ndJ-AF-Fe5"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-QL-8F9">
+                                <rect key="frame" x="16" y="862" width="382" height="0.0"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Um7-Cq-TG8" customClass="MayaCustomButton" customModule="iOS_Test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="55"/>
+                                        <color key="backgroundColor" red="0.3803921569" green="0.2274509804" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="DBu-nQ-rhr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcL-Oo-PhE">
+                                <rect key="frame" x="118" y="432.5" width="178" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pick Video From Gallery"/>
+                                <connections>
+                                    <action selector="pickVideoFromGalleryBttnPressed:" destination="06D-1g-m3V" eventType="touchUpInside" id="Kpp-sx-MT3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bor-bs-E1i"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Bor-bs-E1i" firstAttribute="bottom" secondItem="Gcb-QL-8F9" secondAttribute="bottom" id="1No-Fz-T63"/>
+                            <constraint firstItem="5gJ-D7-adO" firstAttribute="trailing" secondItem="Bor-bs-E1i" secondAttribute="trailing" id="598-u6-43v"/>
+                            <constraint firstItem="Bor-bs-E1i" firstAttribute="trailing" secondItem="Gcb-QL-8F9" secondAttribute="trailing" constant="16" id="7Zi-qp-HtK"/>
+                            <constraint firstItem="JcL-Oo-PhE" firstAttribute="centerY" secondItem="D3q-Qm-CWw" secondAttribute="centerY" id="Etb-29-HJB"/>
+                            <constraint firstItem="JcL-Oo-PhE" firstAttribute="centerX" secondItem="D3q-Qm-CWw" secondAttribute="centerX" id="Hsv-EE-sRr"/>
+                            <constraint firstItem="5gJ-D7-adO" firstAttribute="leading" secondItem="Bor-bs-E1i" secondAttribute="leading" id="KJA-m0-VhG"/>
+                            <constraint firstItem="Bor-bs-E1i" firstAttribute="top" secondItem="pZ7-hj-95f" secondAttribute="top" id="TNx-xC-Tdd"/>
+                            <constraint firstItem="pZ7-hj-95f" firstAttribute="leading" secondItem="Bor-bs-E1i" secondAttribute="leading" id="W9k-z9-NL6"/>
+                            <constraint firstItem="Bor-bs-E1i" firstAttribute="trailing" secondItem="pZ7-hj-95f" secondAttribute="trailing" id="eWj-lJ-jS4"/>
+                            <constraint firstItem="Gcb-QL-8F9" firstAttribute="leading" secondItem="Bor-bs-E1i" secondAttribute="leading" constant="16" id="siT-q8-VpW"/>
+                            <constraint firstItem="5gJ-D7-adO" firstAttribute="top" secondItem="D3q-Qm-CWw" secondAttribute="top" id="wkF-DL-JNA"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ivm-Ay-tMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="78"/>
+            <point key="canvasLocation" x="1600.0000000000002" y="99.776785714285708"/>
+        </scene>
+        <!--Video TrimVC-->
+        <scene sceneID="r4Y-GT-SNW">
+            <objects>
+                <viewController storyboardIdentifier="VideoTrimVC" id="q0O-1w-1fi" customClass="VideoTrimVC" customModule="iOS_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AK2-h4-QCP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hvW-95-Xrp" userLabel="navBarcontainer">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awh-gk-cKd" userLabel="nabbar">
+                                        <rect key="frame" x="0.0" y="44" width="414" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kEj-rL-7jI">
+                                                <rect key="frame" x="187.5" y="12" width="39" height="31"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                                                <state key="normal" title="TRIM">
+                                                    <color key="titleColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59g-O4-QRa">
+                                                <rect key="frame" x="331.5" y="12" width="66.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Export"/>
+                                                <connections>
+                                                    <action selector="pickVideoFromGalleryBttnPressed:" destination="06D-1g-m3V" eventType="touchUpInside" id="mE3-gO-eRK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXL-9k-s1w" userLabel="Cancel">
+                                                <rect key="frame" x="16" y="0.5" width="64" height="54"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="cancel"/>
+                                                <connections>
+                                                    <action selector="cancelTrimingBttnPressed:" destination="q0O-1w-1fi" eventType="touchUpInside" id="Yst-SZ-GY8"/>
+                                                    <action selector="pickVideoFromGalleryBttnPressed:" destination="06D-1g-m3V" eventType="touchUpInside" id="H8x-KJ-cTH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="D1h-jk-KR0"/>
+                                            <constraint firstItem="kEj-rL-7jI" firstAttribute="centerY" secondItem="awh-gk-cKd" secondAttribute="centerY" id="Hlk-Eb-70b"/>
+                                            <constraint firstItem="59g-O4-QRa" firstAttribute="centerY" secondItem="kEj-rL-7jI" secondAttribute="centerY" id="LcM-FS-iOh"/>
+                                            <constraint firstItem="zXL-9k-s1w" firstAttribute="centerY" secondItem="kEj-rL-7jI" secondAttribute="centerY" id="M6g-Iu-Vlh"/>
+                                            <constraint firstItem="kEj-rL-7jI" firstAttribute="centerX" secondItem="awh-gk-cKd" secondAttribute="centerX" id="Wlq-rC-cVA"/>
+                                            <constraint firstAttribute="trailing" secondItem="59g-O4-QRa" secondAttribute="trailing" constant="16" id="eiA-Xw-tHq"/>
+                                            <constraint firstItem="zXL-9k-s1w" firstAttribute="leading" secondItem="awh-gk-cKd" secondAttribute="leading" constant="16" id="v8h-DA-r7b"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vt-4h-3mi" userLabel="line">
+                                        <rect key="frame" x="0.0" y="99" width="414" height="0.5"/>
+                                        <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="LDh-RF-fp7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0vt-4h-3mi" secondAttribute="trailing" id="38g-UK-BLx"/>
+                                    <constraint firstAttribute="bottom" secondItem="0vt-4h-3mi" secondAttribute="bottom" id="O1J-gG-DfN"/>
+                                    <constraint firstItem="0vt-4h-3mi" firstAttribute="top" secondItem="awh-gk-cKd" secondAttribute="bottom" id="qeK-aV-PPC"/>
+                                    <constraint firstItem="0vt-4h-3mi" firstAttribute="leading" secondItem="hvW-95-Xrp" secondAttribute="leading" id="vDh-45-du4"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4eZ-FN-rYZ">
+                                <rect key="frame" x="16" y="862" width="382" height="0.0"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Dp-ee-o6J" customClass="MayaCustomButton" customModule="iOS_Test" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="42" height="55"/>
+                                        <color key="backgroundColor" red="0.3803921569" green="0.2274509804" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="7EP-cW-oZf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BO3-EW-sKy"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hvW-95-Xrp" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" id="5HE-Ni-BfE"/>
+                            <constraint firstItem="awh-gk-cKd" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" id="L4n-t2-pZC"/>
+                            <constraint firstItem="4eZ-FN-rYZ" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" constant="16" id="Lgt-Jh-FvK"/>
+                            <constraint firstItem="BO3-EW-sKy" firstAttribute="bottom" secondItem="4eZ-FN-rYZ" secondAttribute="bottom" id="WiH-S3-ext"/>
+                            <constraint firstItem="BO3-EW-sKy" firstAttribute="top" secondItem="awh-gk-cKd" secondAttribute="top" id="bSM-G4-5VL"/>
+                            <constraint firstItem="BO3-EW-sKy" firstAttribute="trailing" secondItem="4eZ-FN-rYZ" secondAttribute="trailing" constant="16" id="ckc-X6-2bT"/>
+                            <constraint firstItem="hvW-95-Xrp" firstAttribute="top" secondItem="AK2-h4-QCP" secondAttribute="top" id="hg8-hJ-NuC"/>
+                            <constraint firstItem="BO3-EW-sKy" firstAttribute="trailing" secondItem="awh-gk-cKd" secondAttribute="trailing" id="l2s-GN-dav"/>
+                            <constraint firstItem="hvW-95-Xrp" firstAttribute="trailing" secondItem="BO3-EW-sKy" secondAttribute="trailing" id="rlZ-Db-7x5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O9h-Zu-n1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2276.8115942028985" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="cancel" width="40" height="40"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
