@@ -27,6 +27,7 @@
 		6C5E9B182835F83C00F25F13 /* iOS_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B172835F83C00F25F13 /* iOS_TestUITests.swift */; };
 		6C5E9B1A2835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B192835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift */; };
 		6C5E9B282835F88600F25F13 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B272835F88600F25F13 /* AppCoordinator.swift */; };
+		6CCCBB212836A5470004D6BC /* sticker1.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6CCCBB202836A5470004D6BC /* sticker1.GIF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		6C5E9B172835F83C00F25F13 /* iOS_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TestUITests.swift; sourceTree = "<group>"; };
 		6C5E9B192835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6C5E9B272835F88600F25F13 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		6CCCBB202836A5470004D6BC /* sticker1.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker1.GIF; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,11 +251,20 @@
 		6C5E9B2C2835F8ED00F25F13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6CCCBB1F2836A5280004D6BC /* Gif */,
 				6C5E9B012835F83B00F25F13 /* LaunchScreen.storyboard */,
 				6C5E9AFF2835F83B00F25F13 /* Assets.xcassets */,
 				6C5E9B042835F83B00F25F13 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6CCCBB1F2836A5280004D6BC /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				6CCCBB202836A5470004D6BC /* sticker1.GIF */,
+			);
+			path = Gif;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +373,7 @@
 			files = (
 				6C5E9B032835F83B00F25F13 /* LaunchScreen.storyboard in Resources */,
 				6C5E9B002835F83B00F25F13 /* Assets.xcassets in Resources */,
+				6CCCBB212836A5470004D6BC /* sticker1.GIF in Resources */,
 				6C5E9AFE2835F83A00F25F13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

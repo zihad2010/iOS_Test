@@ -37,15 +37,8 @@ class VideoTrimVC: UIViewController {
     
 }
 
-extension VideoTrimVC: VideoPickerDelegate {
+extension VideoTrimVC {
     
-    func didSelect(url: URL?) {
-        guard let url = url else {
-            return
-        }
-        print(url)
-        //self.videoView.player?.play()
-    }
 }
 
 
