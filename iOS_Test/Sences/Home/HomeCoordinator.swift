@@ -29,11 +29,7 @@ final class HomeCoordinator: Coordinator,CoordinatorProtocol {
     }
     
     func navigateToVideoTrimVCWith(videoUrl: URL){
-        let videoTrimCoordinator = VideoTrimCoordinator(navigationController: self.navigationController)
-        videoTrimCoordinator.start()
-    }
-    
-    func navigateTomyImagePickerController(vc: UIImagePickerController){
-        controller.present(vc, animated: true, completion: {  })
+        let coordinator = VideoTrimCoordinator(navigationController: self.navigationController,url: videoUrl)
+        coordinator.start()
     }
 }

@@ -134,27 +134,23 @@
                                                     <action selector="pickVideoFromGalleryBttnPressed:" destination="06D-1g-m3V" eventType="touchUpInside" id="mE3-gO-eRK"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXL-9k-s1w" userLabel="Cancel">
-                                                <rect key="frame" x="16" y="0.5" width="64" height="54"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="cancel"/>
-                                                <connections>
-                                                    <action selector="cancelTrimingBttnPressed:" destination="q0O-1w-1fi" eventType="touchUpInside" id="Yst-SZ-GY8"/>
-                                                    <action selector="pickVideoFromGalleryBttnPressed:" destination="06D-1g-m3V" eventType="touchUpInside" id="H8x-KJ-cTH"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="D1h-jk-KR0"/>
                                             <constraint firstItem="kEj-rL-7jI" firstAttribute="centerY" secondItem="awh-gk-cKd" secondAttribute="centerY" id="Hlk-Eb-70b"/>
                                             <constraint firstItem="59g-O4-QRa" firstAttribute="centerY" secondItem="kEj-rL-7jI" secondAttribute="centerY" id="LcM-FS-iOh"/>
-                                            <constraint firstItem="zXL-9k-s1w" firstAttribute="centerY" secondItem="kEj-rL-7jI" secondAttribute="centerY" id="M6g-Iu-Vlh"/>
                                             <constraint firstItem="kEj-rL-7jI" firstAttribute="centerX" secondItem="awh-gk-cKd" secondAttribute="centerX" id="Wlq-rC-cVA"/>
                                             <constraint firstAttribute="trailing" secondItem="59g-O4-QRa" secondAttribute="trailing" constant="16" id="eiA-Xw-tHq"/>
-                                            <constraint firstItem="zXL-9k-s1w" firstAttribute="leading" secondItem="awh-gk-cKd" secondAttribute="leading" constant="16" id="v8h-DA-r7b"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnO-Sj-OL6">
+                                        <rect key="frame" x="16" y="51.5" width="40" height="40"/>
+                                        <state key="normal" image="cancel"/>
+                                        <connections>
+                                            <action selector="cancelTrimingBttnPressed:" destination="q0O-1w-1fi" eventType="touchUpInside" id="StO-ex-EHx"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vt-4h-3mi" userLabel="line">
                                         <rect key="frame" x="0.0" y="99" width="414" height="0.5"/>
                                         <color key="backgroundColor" red="0.60392156860000001" green="0.60392156860000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -166,46 +162,40 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="0vt-4h-3mi" secondAttribute="trailing" id="38g-UK-BLx"/>
+                                    <constraint firstItem="vnO-Sj-OL6" firstAttribute="leading" secondItem="hvW-95-Xrp" secondAttribute="leading" constant="16" id="5QH-A7-6H3"/>
+                                    <constraint firstItem="vnO-Sj-OL6" firstAttribute="centerY" secondItem="kEj-rL-7jI" secondAttribute="centerY" id="Chz-FF-d0n"/>
                                     <constraint firstAttribute="bottom" secondItem="0vt-4h-3mi" secondAttribute="bottom" id="O1J-gG-DfN"/>
                                     <constraint firstItem="0vt-4h-3mi" firstAttribute="top" secondItem="awh-gk-cKd" secondAttribute="bottom" id="qeK-aV-PPC"/>
                                     <constraint firstItem="0vt-4h-3mi" firstAttribute="leading" secondItem="hvW-95-Xrp" secondAttribute="leading" id="vDh-45-du4"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4eZ-FN-rYZ">
-                                <rect key="frame" x="16" y="862" width="382" height="0.0"/>
-                                <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Dp-ee-o6J" customClass="MayaCustomButton" customModule="iOS_Test" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="55"/>
-                                        <color key="backgroundColor" red="0.3803921569" green="0.2274509804" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="7EP-cW-oZf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q94-4d-rVH" customClass="VideoPlayer" customModule="iOS_Test" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="99.5" width="414" height="358.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BO3-EW-sKy"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hvW-95-Xrp" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" id="5HE-Ni-BfE"/>
                             <constraint firstItem="awh-gk-cKd" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" id="L4n-t2-pZC"/>
-                            <constraint firstItem="4eZ-FN-rYZ" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" constant="16" id="Lgt-Jh-FvK"/>
-                            <constraint firstItem="BO3-EW-sKy" firstAttribute="bottom" secondItem="4eZ-FN-rYZ" secondAttribute="bottom" id="WiH-S3-ext"/>
+                            <constraint firstItem="Q94-4d-rVH" firstAttribute="height" secondItem="AK2-h4-QCP" secondAttribute="height" multiplier="0.4" id="Xm6-pv-OxB"/>
                             <constraint firstItem="BO3-EW-sKy" firstAttribute="top" secondItem="awh-gk-cKd" secondAttribute="top" id="bSM-G4-5VL"/>
-                            <constraint firstItem="BO3-EW-sKy" firstAttribute="trailing" secondItem="4eZ-FN-rYZ" secondAttribute="trailing" constant="16" id="ckc-X6-2bT"/>
+                            <constraint firstItem="Q94-4d-rVH" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" id="dBI-D9-crw"/>
                             <constraint firstItem="hvW-95-Xrp" firstAttribute="top" secondItem="AK2-h4-QCP" secondAttribute="top" id="hg8-hJ-NuC"/>
                             <constraint firstItem="BO3-EW-sKy" firstAttribute="trailing" secondItem="awh-gk-cKd" secondAttribute="trailing" id="l2s-GN-dav"/>
                             <constraint firstItem="hvW-95-Xrp" firstAttribute="trailing" secondItem="BO3-EW-sKy" secondAttribute="trailing" id="rlZ-Db-7x5"/>
+                            <constraint firstItem="Q94-4d-rVH" firstAttribute="top" secondItem="hvW-95-Xrp" secondAttribute="bottom" id="upe-ZN-kEe"/>
+                            <constraint firstItem="BO3-EW-sKy" firstAttribute="trailing" secondItem="Q94-4d-rVH" secondAttribute="trailing" id="z1f-vb-AoU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="videoView" destination="Q94-4d-rVH" id="kpn-Gj-Ew5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9h-Zu-n1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276.8115942028985" y="99.776785714285708"/>
+            <point key="canvasLocation" x="2275.36231884058" y="99.776785714285708"/>
         </scene>
     </scenes>
     <resources>

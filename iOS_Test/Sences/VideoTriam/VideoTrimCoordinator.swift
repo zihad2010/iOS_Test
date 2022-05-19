@@ -14,15 +14,18 @@ final class VideoTrimCoordinator: Coordinator,CoordinatorProtocol {
     private unowned var navigationController: UINavigationController
     public weak var coordinator: CoordinatorProtocol?
     private unowned var controller: VideoTrimVC
+    private var url: URL
     
-    init(navigationController: UINavigationController,controller: VideoTrimVC = VideoTrimVC()) {
+    init(navigationController: UINavigationController,url: URL,controller: VideoTrimVC = VideoTrimVC()) {
         self.navigationController = navigationController
         self.controller = controller
+        self.url = url
     }
         
     func start() {
         controller = .instantiate()
         controller.coordinator = self
+        controller.url = self.url
         navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(controller, animated: true)
         bindToLifecycle(of: controller)
