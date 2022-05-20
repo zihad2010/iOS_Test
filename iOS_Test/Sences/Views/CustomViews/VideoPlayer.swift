@@ -55,6 +55,8 @@ class VideoView: UIView {
         self.player = AVPlayer(playerItem: AVPlayerItem(url: url))
         self.playerLayer.videoGravity = .resizeAspect
         
+
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.itemDidPlayToEndTime(_:)),
                                                name: .AVPlayerItemDidPlayToEndTime,
@@ -64,6 +66,9 @@ class VideoView: UIView {
                                                selector: #selector(self.itemFailedToPlayToEndTime(_:)),
                                                name: .AVPlayerItemFailedToPlayToEndTime,
                                                object: self.player?.currentItem)
+        
+        
+                                             
     }
     
     @objc func itemDidPlayToEndTime(_ notification: NSNotification) {
@@ -112,13 +117,6 @@ class VideoView: UIView {
         self.player = nil
     }
 }
-
-
-
-
-
-
-
 
 
 
