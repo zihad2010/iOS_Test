@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C2C643F2837688B00F7FDE7 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2C643E2837688B00F7FDE7 /* CollectionViewDataSource.swift */; };
+		6C2C644228377F7700F7FDE7 /* UIImageView+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2C644128377F7700F7FDE7 /* UIImageView+Gif.swift */; };
+		6C2C64442837820000F7FDE7 /* adventure-time.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C64432837820000F7FDE7 /* adventure-time.gif */; };
+		6C2C64462837826E00F7FDE7 /* sticker3.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C64452837826E00F7FDE7 /* sticker3.GIF */; };
+		6C2C64482837860B00F7FDE7 /* sticker1.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C64472837860B00F7FDE7 /* sticker1.GIF */; };
+		6C2C644A2837861900F7FDE7 /* sticker2.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C64492837861900F7FDE7 /* sticker2.GIF */; };
+		6C2C644C2837862500F7FDE7 /* sticker4.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C644B2837862500F7FDE7 /* sticker4.GIF */; };
+		6C2C644E2837862E00F7FDE7 /* sticker5.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C644D2837862E00F7FDE7 /* sticker5.GIF */; };
+		6C2C64502837863800F7FDE7 /* sticker6.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C644F2837863800F7FDE7 /* sticker6.GIF */; };
 		6C3C42282835FF7B00971236 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C42272835FF7B00971236 /* CoordinatorProtocol.swift */; };
 		6C3C422A2836008F00971236 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C42292836008F00971236 /* HomeCoordinator.swift */; };
 		6C3C42332836018D00971236 /* NativeNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3C422F2836018D00971236 /* NativeNavigator.swift */; };
@@ -27,7 +36,6 @@
 		6C5E9B182835F83C00F25F13 /* iOS_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B172835F83C00F25F13 /* iOS_TestUITests.swift */; };
 		6C5E9B1A2835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B192835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift */; };
 		6C5E9B282835F88600F25F13 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B272835F88600F25F13 /* AppCoordinator.swift */; };
-		6CCCBB212836A5470004D6BC /* sticker1.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6CCCBB202836A5470004D6BC /* sticker1.GIF */; };
 		6CCCBB232836AA860004D6BC /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCCBB222836AA860004D6BC /* PlayPauseButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C2C643E2837688B00F7FDE7 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		6C2C644128377F7700F7FDE7 /* UIImageView+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Gif.swift"; sourceTree = "<group>"; };
+		6C2C64432837820000F7FDE7 /* adventure-time.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "adventure-time.gif"; sourceTree = "<group>"; };
+		6C2C64452837826E00F7FDE7 /* sticker3.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker3.GIF; sourceTree = "<group>"; };
+		6C2C64472837860B00F7FDE7 /* sticker1.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker1.GIF; sourceTree = "<group>"; };
+		6C2C64492837861900F7FDE7 /* sticker2.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker2.GIF; sourceTree = "<group>"; };
+		6C2C644B2837862500F7FDE7 /* sticker4.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker4.GIF; sourceTree = "<group>"; };
+		6C2C644D2837862E00F7FDE7 /* sticker5.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker5.GIF; sourceTree = "<group>"; };
+		6C2C644F2837863800F7FDE7 /* sticker6.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker6.GIF; sourceTree = "<group>"; };
 		6C3C42272835FF7B00971236 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		6C3C42292836008F00971236 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		6C3C422F2836018D00971236 /* NativeNavigator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeNavigator.swift; sourceTree = "<group>"; };
@@ -73,7 +90,6 @@
 		6C5E9B172835F83C00F25F13 /* iOS_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TestUITests.swift; sourceTree = "<group>"; };
 		6C5E9B192835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6C5E9B272835F88600F25F13 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		6CCCBB202836A5470004D6BC /* sticker1.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker1.GIF; sourceTree = "<group>"; };
 		6CCCBB222836AA860004D6BC /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C2C643D2837687900F7FDE7 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				6C2C643E2837688B00F7FDE7 /* CollectionViewDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		6C3C42252835FF3E00971236 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +138,7 @@
 		6C3C42262835FF5B00971236 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6C2C643D2837687900F7FDE7 /* DataSource */,
 				6C584E042836237A00575053 /* VideoPicker */,
 				6C3C422D2836018D00971236 /* Coordinator */,
 			);
@@ -135,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				6C3C42372836043100971236 /* UIViewControllerExt.swift */,
+				6C2C644128377F7700F7FDE7 /* UIImageView+Gif.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -257,6 +283,7 @@
 				6CCCBB1F2836A5280004D6BC /* Gif */,
 				6C5E9B012835F83B00F25F13 /* LaunchScreen.storyboard */,
 				6C5E9AFF2835F83B00F25F13 /* Assets.xcassets */,
+				6C2C64432837820000F7FDE7 /* adventure-time.gif */,
 				6C5E9B042835F83B00F25F13 /* Info.plist */,
 			);
 			path = Resources;
@@ -265,7 +292,12 @@
 		6CCCBB1F2836A5280004D6BC /* Gif */ = {
 			isa = PBXGroup;
 			children = (
-				6CCCBB202836A5470004D6BC /* sticker1.GIF */,
+				6C2C644F2837863800F7FDE7 /* sticker6.GIF */,
+				6C2C644D2837862E00F7FDE7 /* sticker5.GIF */,
+				6C2C644B2837862500F7FDE7 /* sticker4.GIF */,
+				6C2C64452837826E00F7FDE7 /* sticker3.GIF */,
+				6C2C64492837861900F7FDE7 /* sticker2.GIF */,
+				6C2C64472837860B00F7FDE7 /* sticker1.GIF */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -374,9 +406,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C2C64442837820000F7FDE7 /* adventure-time.gif in Resources */,
+				6C2C644E2837862E00F7FDE7 /* sticker5.GIF in Resources */,
+				6C2C644C2837862500F7FDE7 /* sticker4.GIF in Resources */,
+				6C2C644A2837861900F7FDE7 /* sticker2.GIF in Resources */,
 				6C5E9B032835F83B00F25F13 /* LaunchScreen.storyboard in Resources */,
+				6C2C64462837826E00F7FDE7 /* sticker3.GIF in Resources */,
 				6C5E9B002835F83B00F25F13 /* Assets.xcassets in Resources */,
-				6CCCBB212836A5470004D6BC /* sticker1.GIF in Resources */,
+				6C2C64502837863800F7FDE7 /* sticker6.GIF in Resources */,
+				6C2C64482837860B00F7FDE7 /* sticker1.GIF in Resources */,
 				6C5E9AFE2835F83A00F25F13 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,12 +445,14 @@
 				6C584E0B2836486800575053 /* VideoTrimCoordinator.swift in Sources */,
 				6C5E9AFB2835F83A00F25F13 /* HomeVC.swift in Sources */,
 				6C3C42282835FF7B00971236 /* CoordinatorProtocol.swift in Sources */,
+				6C2C644228377F7700F7FDE7 /* UIImageView+Gif.swift in Sources */,
 				6C584E092836483600575053 /* VideoTrimVC.swift in Sources */,
 				6C3C42342836018D00971236 /* DeallocObserver.swift in Sources */,
 				6C3C42332836018D00971236 /* NativeNavigator.swift in Sources */,
 				6C3C42352836018D00971236 /* Coordinator.swift in Sources */,
 				6C5E9AF72835F83A00F25F13 /* AppDelegate.swift in Sources */,
 				6C5E9AF92835F83A00F25F13 /* SceneDelegate.swift in Sources */,
+				6C2C643F2837688B00F7FDE7 /* CollectionViewDataSource.swift in Sources */,
 				6C3C422A2836008F00971236 /* HomeCoordinator.swift in Sources */,
 				6C584E062836239700575053 /* VideoPicker.swift in Sources */,
 				6CCCBB232836AA860004D6BC /* PlayPauseButton.swift in Sources */,

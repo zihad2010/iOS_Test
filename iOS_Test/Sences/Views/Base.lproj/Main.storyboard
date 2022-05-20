@@ -303,6 +303,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="giferView" destination="Hb6-Ec-zMW" id="kZe-2D-M0s"/>
                         <outlet property="playPauseButton" destination="soK-gE-hap" id="u2W-0y-QlK"/>
                         <outlet property="videoView" destination="Q94-4d-rVH" id="1Pb-xr-r4y"/>
                     </connections>

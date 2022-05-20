@@ -11,6 +11,8 @@ class VideoTrimVC: UIViewController {
     
     @IBOutlet weak var videoView: VideoView!
     @IBOutlet weak var playPauseButton: PlayPauseButton!
+    @IBOutlet weak var giferView: UIImageView!
+
     
     public var coordinator: VideoTrimCoordinator?
     public var url: URL?
@@ -24,6 +26,7 @@ class VideoTrimVC: UIViewController {
 
     self.videoView.url = url
     self.setUpBinding()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +37,8 @@ class VideoTrimVC: UIViewController {
     private func setUpBinding(){
         self.playPauseButton.action = { [weak self] isPlay in
             print(isPlay)
+            self?.giferView.loadGif(asset: "sticker1")
+
             isPlay ? self?.videoView.play() : self?.videoView.pause()
             self?.playPauseButton?.update(isPlay: isPlay)
         }
