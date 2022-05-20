@@ -23,7 +23,6 @@ final class HomeCoordinator: Coordinator,CoordinatorProtocol {
     func start() {
         controller = .instantiate()
         controller.coordinator = self
-        navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(controller, animated: true)
         bindToLifecycle(of: controller)
     }

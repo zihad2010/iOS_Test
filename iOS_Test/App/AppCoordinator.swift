@@ -21,6 +21,8 @@ final class AppCoordinator: CoordinatorProtocol {
     func start() {
         let homeCoordinator = HomeCoordinator(navigationController: self.navigationController)
         homeCoordinator.start()
+        navigationController.navigationBar.isHidden = true
+        navigationController.interactivePopGestureRecognizer?.isEnabled = false
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }

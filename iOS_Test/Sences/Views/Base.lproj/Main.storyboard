@@ -174,7 +174,8 @@
                                 <rect key="frame" x="0.0" y="99.5" width="414" height="410.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hb6-Ec-zMW">
-                                        <rect key="frame" x="263" y="255" width="151" height="155.5"/>
+                                        <rect key="frame" x="263" y="255.5" width="151" height="155"/>
+                                        <color key="tintColor" red="0.4652386308" green="0.30885827539999999" blue="0.76082229609999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -219,12 +220,15 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-7F-o9b">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Fs-7F-o9b" customClass="ABVideoRangeSlider" customModule="iOS_Test" customModuleProvider="target">
                                 <rect key="frame" x="20" y="609.5" width="374" height="62"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="suM-I9-q3t"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soK-gE-hap" customClass="PlayPauseButton" customModule="iOS_Test" customModuleProvider="target">
-                                <rect key="frame" x="20" y="539" width="36" height="36"/>
+                                <rect key="frame" x="20" y="539.5" width="36" height="36"/>
                                 <state key="normal" image="play"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e5P-mu-RMg">
@@ -293,7 +297,6 @@
                             <constraint firstItem="CEG-ts-uTL" firstAttribute="top" secondItem="Q94-4d-rVH" secondAttribute="bottom" constant="20" id="Emh-br-1FJ"/>
                             <constraint firstItem="6Fs-7F-o9b" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" constant="20" id="GER-ce-8OB"/>
                             <constraint firstItem="awh-gk-cKd" firstAttribute="leading" secondItem="BO3-EW-sKy" secondAttribute="leading" id="L4n-t2-pZC"/>
-                            <constraint firstItem="6Fs-7F-o9b" firstAttribute="height" secondItem="AK2-h4-QCP" secondAttribute="width" multiplier="0.15" id="OBF-Y6-Jum"/>
                             <constraint firstItem="e5P-mu-RMg" firstAttribute="trailing" secondItem="6Fs-7F-o9b" secondAttribute="trailing" id="Tng-f6-9XF"/>
                             <constraint firstItem="BO3-EW-sKy" firstAttribute="top" secondItem="awh-gk-cKd" secondAttribute="top" id="bSM-G4-5VL"/>
                             <constraint firstItem="e5P-mu-RMg" firstAttribute="leading" secondItem="6Fs-7F-o9b" secondAttribute="leading" id="bga-HP-9by"/>
@@ -310,10 +313,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="endIndicatorLebel" destination="Vus-tC-bkw" id="RhU-kO-XtA"/>
                         <outlet property="giferView" destination="Hb6-Ec-zMW" id="kZe-2D-M0s"/>
                         <outlet property="gifthumbsCollectionView" destination="8kZ-2Z-Ojg" id="h8z-KL-U8s"/>
                         <outlet property="playPauseButton" destination="soK-gE-hap" id="u2W-0y-QlK"/>
-                        <outlet property="videoView" destination="Q94-4d-rVH" id="1Pb-xr-r4y"/>
+                        <outlet property="startIndicatorLebel" destination="Nn3-hF-1df" id="F7C-QM-jeo"/>
+                        <outlet property="videoRangeSlider" destination="6Fs-7F-o9b" id="jzB-7t-X1b"/>
+                        <outlet property="videoView" destination="Q94-4d-rVH" id="CQ4-xV-NvK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9h-Zu-n1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -326,9 +332,6 @@
         <image name="play" width="36" height="36"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

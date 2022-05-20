@@ -11,7 +11,7 @@ class HomeVC: UIViewController {
     
     var coordinator: HomeCoordinator?
     var videoPicker: VideoPicker!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,8 +22,9 @@ class HomeVC: UIViewController {
 }
 
 extension HomeVC: VideoPickerDelegate {
-
+    
     func didSelect(url: URL?) {
+        
         guard let url = url else {
             return
         }

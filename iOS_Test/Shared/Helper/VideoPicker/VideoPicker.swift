@@ -27,9 +27,9 @@ open class VideoPicker: NSObject {
         
         self.pickerController.delegate = self
         self.pickerController.allowsEditing = true
-        self.pickerController.mediaTypes = ["public.movie"]
         self.pickerController.videoQuality = .typeHigh
         self.pickerController.sourceType = .photoLibrary
+        self.pickerController.mediaTypes = ["public.movie"]
         self.presentationController?.present(self.pickerController, animated: true)
         
     }
