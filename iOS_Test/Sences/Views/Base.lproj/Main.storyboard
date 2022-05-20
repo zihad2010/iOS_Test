@@ -170,11 +170,11 @@
                                     <constraint firstItem="0vt-4h-3mi" firstAttribute="leading" secondItem="hvW-95-Xrp" secondAttribute="leading" id="vDh-45-du4"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q94-4d-rVH" customClass="VideoPlayer" customModule="iOS_Test" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q94-4d-rVH" customClass="VideoView" customModule="iOS_Test" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="99.5" width="414" height="420.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sticker1.GIF" translatesAutoresizingMaskIntoConstraints="NO" id="Hb6-Ec-zMW">
-                                        <rect key="frame" x="263" y="262" width="151" height="159"/>
+                                        <rect key="frame" x="263" y="261.5" width="151" height="159"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -223,12 +223,9 @@
                                 <rect key="frame" x="20" y="619.5" width="374" height="62"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soK-gE-hap">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soK-gE-hap" customClass="PlayPauseButton" customModule="iOS_Test" customModuleProvider="target">
                                 <rect key="frame" x="20" y="549" width="36" height="36"/>
                                 <state key="normal" image="play"/>
-                                <connections>
-                                    <action selector="cancelTrimingBttnPressed:" destination="q0O-1w-1fi" eventType="touchUpInside" id="TbB-ti-n0G"/>
-                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e5P-mu-RMg">
                                 <rect key="frame" x="20" y="731.5" width="374" height="100.5"/>
@@ -306,7 +303,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="videoView" destination="Q94-4d-rVH" id="kpn-Gj-Ew5"/>
+                        <outlet property="playPauseButton" destination="soK-gE-hap" id="u2W-0y-QlK"/>
+                        <outlet property="videoView" destination="Q94-4d-rVH" id="1Pb-xr-r4y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9h-Zu-n1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

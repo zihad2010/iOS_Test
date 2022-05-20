@@ -6,24 +6,28 @@
 //
 
 import UIKit
+import UIKit
+import AVKit
 import AVFoundation
 
-open class VideoPlayer: UIView {
+class VideoView: UIView {
     
     public enum Repeat {
         case once
         case loop
     }
-   
+    
+    public var `repeat`: Repeat = .once
+    
     override open class var layerClass: AnyClass {
         return AVPlayerLayer.self
     }
-
-    private var playerLayer: AVPlayerLayer {
+    
+    var playerLayer: AVPlayerLayer {
         return self.layer as! AVPlayerLayer
     }
-
-    public var player: AVPlayer? {
+    
+    private var player: AVPlayer? {
         get {
             self.playerLayer.player
         }
@@ -32,6 +36,116 @@ open class VideoPlayer: UIView {
         }
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    public var url: URL? {
+        didSet {
+            guard let url = self.url else {
+                self.teardown()
+                return
+            }
+            self.setup(url: url)
+        }
+    }
+    
+    private func setup(url: URL) {
+        
+        self.player = AVPlayer(playerItem: AVPlayerItem(url: url))
+        self.playerLayer.videoGravity = .resizeAspect
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.itemDidPlayToEndTime(_:)),
+                                               name: .AVPlayerItemDidPlayToEndTime,
+                                               object: self.player?.currentItem)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.itemFailedToPlayToEndTime(_:)),
+                                               name: .AVPlayerItemFailedToPlayToEndTime,
+                                               object: self.player?.currentItem)
+    }
+    
+    @objc func itemDidPlayToEndTime(_ notification: NSNotification) {
+        guard self.repeat == .loop else {
+            return
+        }
+        self.player?.seek(to: .zero)
+        self.player?.play()
+    }
+    
+    
+    func play() {
+        if player?.timeControlStatus != AVPlayer.TimeControlStatus.playing {
+            player?.play()
+        }
+    }
+    
+    func pause() {
+        player?.pause()
+    }
+    
+    func stop() {
+        player?.pause()
+        player?.seek(to: CMTime.zero)
+    }
+        
+    @objc func itemFailedToPlayToEndTime(_ notification: NSNotification) {
+        self.teardown()
+    }
+    
+    deinit{
+        teardown()
+    }
+    
+    private func teardown() {
+        self.player?.pause()
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: .AVPlayerItemDidPlayToEndTime,
+                                                  object: self.player?.currentItem)
+        
+        NotificationCenter.default.removeObserver(self,
+                                                  name: .AVPlayerItemFailedToPlayToEndTime,
+                                                  object: self.player?.currentItem)
+        
+        self.player = nil
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*open class VideoPlayer: UIView {
+    
+    public enum Repeat {
+        case once
+        case loop
+    }
+    
+    override open class var layerClass: AnyClass {
+        return AVPlayerLayer.self
+    }
+    
+    var playerLayer: AVPlayerLayer {
+        return self.layer as! AVPlayerLayer
+    }
+    
+    public var player: AVPlayer? {
+        get {
+            self.playerLayer.player
+        }
+        set {
+            self.playerLayer.player = newValue
+        }
+    }
     
     open override var contentMode: UIView.ContentMode {
         didSet {
@@ -45,7 +159,7 @@ open class VideoPlayer: UIView {
             }
         }
     }
-
+    
     public var `repeat`: Repeat = .once
     
     public var url: URL? {
@@ -57,29 +171,29 @@ open class VideoPlayer: UIView {
             self.setup(url: url)
         }
     }
-
+    
     @available(*, unavailable)
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         self.initialize()
     }
-
+    
     @available(*, unavailable)
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
+        
         self.initialize()
     }
-
+    
     public init() {
         super.init(frame: .zero)
         
         self.translatesAutoresizingMaskIntoConstraints = false
-
+        
         self.initialize()
     }
-
+    
     open func initialize() {
         
     }
@@ -87,8 +201,8 @@ open class VideoPlayer: UIView {
     deinit {
         self.teardown()
     }
- 
-
+    
+    
     private func setup(url: URL) {
         
         self.player = AVPlayer(playerItem: AVPlayerItem(url: url))
@@ -99,7 +213,7 @@ open class VideoPlayer: UIView {
                                               context: nil)
         
         self.player?.addObserver(self, forKeyPath: "rate", options: [.old, .new], context: nil)
-
+        
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.itemDidPlayToEndTime(_:)),
@@ -114,7 +228,7 @@ open class VideoPlayer: UIView {
     
     private func teardown() {
         self.player?.pause()
-
+        
         self.player?.currentItem?.removeObserver(self, forKeyPath: "status")
         
         self.player?.removeObserver(self, forKeyPath: "rate")
@@ -130,7 +244,6 @@ open class VideoPlayer: UIView {
         self.player = nil
     }
     
-
     @objc func itemDidPlayToEndTime(_ notification: NSNotification) {
         guard self.repeat == .loop else {
             return
@@ -145,13 +258,13 @@ open class VideoPlayer: UIView {
     
     
     open override func observeValue(forKeyPath keyPath: String?,
-                                          of object: Any?,
-                                          change: [NSKeyValueChangeKey : Any]?,
-                                          context: UnsafeMutableRawPointer?) {
+                                    of object: Any?,
+                                    change: [NSKeyValueChangeKey : Any]?,
+                                    context: UnsafeMutableRawPointer?) {
         if keyPath == "status", let status = self.player?.currentItem?.status, status == .failed {
             self.teardown()
         }
-
+        
         if
             keyPath == "rate",
             let player = self.player,
@@ -163,5 +276,5 @@ open class VideoPlayer: UIView {
             self.player?.play()
         }
     }
-}
+}*/
 
