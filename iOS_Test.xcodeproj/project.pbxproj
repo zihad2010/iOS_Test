@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6C2C643F2837688B00F7FDE7 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2C643E2837688B00F7FDE7 /* CollectionViewDataSource.swift */; };
 		6C2C644228377F7700F7FDE7 /* UIImageView+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2C644128377F7700F7FDE7 /* UIImageView+Gif.swift */; };
-		6C2C64442837820000F7FDE7 /* adventure-time.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C64432837820000F7FDE7 /* adventure-time.gif */; };
 		6C2C64462837826E00F7FDE7 /* sticker3.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C64452837826E00F7FDE7 /* sticker3.GIF */; };
 		6C2C64482837860B00F7FDE7 /* sticker1.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C64472837860B00F7FDE7 /* sticker1.GIF */; };
 		6C2C644A2837861900F7FDE7 /* sticker2.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 6C2C64492837861900F7FDE7 /* sticker2.GIF */; };
@@ -36,6 +35,10 @@
 		6C5E9B182835F83C00F25F13 /* iOS_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B172835F83C00F25F13 /* iOS_TestUITests.swift */; };
 		6C5E9B1A2835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B192835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift */; };
 		6C5E9B282835F88600F25F13 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5E9B272835F88600F25F13 /* AppCoordinator.swift */; };
+		6C993EED283793F000A14C1C /* ThumbCollViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993EEC283793F000A14C1C /* ThumbCollViewCell.swift */; };
+		6C993EF02837949A00A14C1C /* ThumbVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993EEF2837949A00A14C1C /* ThumbVM.swift */; };
+		6C993EF42837A53A00A14C1C /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993EF32837A53A00A14C1C /* StringExt.swift */; };
+		6C993EF62837A5A000A14C1C /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993EF52837A5A000A14C1C /* IntExt.swift */; };
 		6CCCBB232836AA860004D6BC /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCCBB222836AA860004D6BC /* PlayPauseButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +62,6 @@
 /* Begin PBXFileReference section */
 		6C2C643E2837688B00F7FDE7 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		6C2C644128377F7700F7FDE7 /* UIImageView+Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Gif.swift"; sourceTree = "<group>"; };
-		6C2C64432837820000F7FDE7 /* adventure-time.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "adventure-time.gif"; sourceTree = "<group>"; };
 		6C2C64452837826E00F7FDE7 /* sticker3.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker3.GIF; sourceTree = "<group>"; };
 		6C2C64472837860B00F7FDE7 /* sticker1.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker1.GIF; sourceTree = "<group>"; };
 		6C2C64492837861900F7FDE7 /* sticker2.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sticker2.GIF; sourceTree = "<group>"; };
@@ -90,6 +92,10 @@
 		6C5E9B172835F83C00F25F13 /* iOS_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TestUITests.swift; sourceTree = "<group>"; };
 		6C5E9B192835F83C00F25F13 /* iOS_TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6C5E9B272835F88600F25F13 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		6C993EEC283793F000A14C1C /* ThumbCollViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbCollViewCell.swift; sourceTree = "<group>"; };
+		6C993EEF2837949A00A14C1C /* ThumbVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbVM.swift; sourceTree = "<group>"; };
+		6C993EF32837A53A00A14C1C /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		6C993EF52837A5A000A14C1C /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
 		6CCCBB222836AA860004D6BC /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +135,7 @@
 		6C3C42252835FF3E00971236 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				6C993EEE2837945A00A14C1C /* Models */,
 				6C3C42362836041300971236 /* Extension */,
 				6C3C42262835FF5B00971236 /* Helper */,
 			);
@@ -161,6 +168,8 @@
 			children = (
 				6C3C42372836043100971236 /* UIViewControllerExt.swift */,
 				6C2C644128377F7700F7FDE7 /* UIImageView+Gif.swift */,
+				6C993EF32837A53A00A14C1C /* StringExt.swift */,
+				6C993EF52837A5A000A14C1C /* IntExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 		6C5E9B2B2835F8CA00F25F13 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6C993EEB283793CB00A14C1C /* Cells */,
 				6C584E0C283657C000575053 /* CustomViews */,
 				6C5E9AFC2835F83A00F25F13 /* Main.storyboard */,
 			);
@@ -283,10 +293,25 @@
 				6CCCBB1F2836A5280004D6BC /* Gif */,
 				6C5E9B012835F83B00F25F13 /* LaunchScreen.storyboard */,
 				6C5E9AFF2835F83B00F25F13 /* Assets.xcassets */,
-				6C2C64432837820000F7FDE7 /* adventure-time.gif */,
 				6C5E9B042835F83B00F25F13 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6C993EEB283793CB00A14C1C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6C993EEC283793F000A14C1C /* ThumbCollViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		6C993EEE2837945A00A14C1C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6C993EEF2837949A00A14C1C /* ThumbVM.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6CCCBB1F2836A5280004D6BC /* Gif */ = {
@@ -406,7 +431,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C2C64442837820000F7FDE7 /* adventure-time.gif in Resources */,
 				6C2C644E2837862E00F7FDE7 /* sticker5.GIF in Resources */,
 				6C2C644C2837862500F7FDE7 /* sticker4.GIF in Resources */,
 				6C2C644A2837861900F7FDE7 /* sticker2.GIF in Resources */,
@@ -446,17 +470,21 @@
 				6C5E9AFB2835F83A00F25F13 /* HomeVC.swift in Sources */,
 				6C3C42282835FF7B00971236 /* CoordinatorProtocol.swift in Sources */,
 				6C2C644228377F7700F7FDE7 /* UIImageView+Gif.swift in Sources */,
+				6C993EF02837949A00A14C1C /* ThumbVM.swift in Sources */,
 				6C584E092836483600575053 /* VideoTrimVC.swift in Sources */,
+				6C993EF62837A5A000A14C1C /* IntExt.swift in Sources */,
 				6C3C42342836018D00971236 /* DeallocObserver.swift in Sources */,
 				6C3C42332836018D00971236 /* NativeNavigator.swift in Sources */,
 				6C3C42352836018D00971236 /* Coordinator.swift in Sources */,
 				6C5E9AF72835F83A00F25F13 /* AppDelegate.swift in Sources */,
 				6C5E9AF92835F83A00F25F13 /* SceneDelegate.swift in Sources */,
 				6C2C643F2837688B00F7FDE7 /* CollectionViewDataSource.swift in Sources */,
+				6C993EF42837A53A00A14C1C /* StringExt.swift in Sources */,
 				6C3C422A2836008F00971236 /* HomeCoordinator.swift in Sources */,
 				6C584E062836239700575053 /* VideoPicker.swift in Sources */,
 				6CCCBB232836AA860004D6BC /* PlayPauseButton.swift in Sources */,
 				6C584E0E2836589D00575053 /* VideoPlayer.swift in Sources */,
+				6C993EED283793F000A14C1C /* ThumbCollViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
