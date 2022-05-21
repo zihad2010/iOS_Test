@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ABThumbnailsManager: NSObject {
+class ThumbnailsManager: NSObject {
     
     var thumbnailViews = [UIImageView]()
 
@@ -73,7 +73,7 @@ class ABThumbnailsManager: NSObject {
         let imagesCount = self.thumbnailCount(inView: view)
         
         for i in 0..<imagesCount{
-            let thumbnail = ABVideoHelper.thumbnailFromVideo(videoUrl: videoURL,
+            let thumbnail = VideoHelper.thumbnailFromVideo(videoUrl: videoURL,
                                                              time: CMTimeMake(value: Int64(offset), timescale: 1))
             offset = Float64(i) * (duration / Float64(imagesCount))
             thumbnails.append(thumbnail)

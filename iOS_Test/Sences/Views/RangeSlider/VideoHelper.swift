@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ABVideoHelper: NSObject {
+class VideoHelper: NSObject {
 
     static func thumbnailFromVideo(videoUrl: URL, time: CMTime) -> UIImage{
         let asset: AVAsset = AVAsset(url: videoUrl) as AVAsset

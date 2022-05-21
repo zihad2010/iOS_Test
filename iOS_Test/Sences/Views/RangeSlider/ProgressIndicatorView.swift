@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ABProgressIndicator: UIView {
+class ProgressIndicatorView: UIView {
     
     var imageView = UIImageView()
     

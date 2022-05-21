@@ -26,14 +26,14 @@ public class VideoRangeSlider: UIView, UIGestureRecognizerDelegate {
     
     public weak var delegate: VideoRangeSliderDelegate? = nil
     
-    var startIndicator      = ABStartIndicator()
-    var endIndicator        = ABEndIndicator()
-    var topLine             = ABBorder()
-    var bottomLine          = ABBorder()
-    var progressIndicator   = ABProgressIndicator()
+    var startIndicator      = StartIndicatorView()
+    var endIndicator        = EndIndicatorView()
+    var topLine             = BorderView()
+    var bottomLine          = BorderView()
+    var progressIndicator   = ProgressIndicatorView()
     var draggableView       = UIView()
     
-    let thumbnailsManager   = ABThumbnailsManager()
+    let thumbnailsManager   = ThumbnailsManager()
     var duration: Float64   = 0.0
     var videoURL            = URL(fileURLWithPath: "")
     
@@ -54,11 +54,6 @@ public class VideoRangeSlider: UIView, UIGestureRecognizerDelegate {
     
     var isUpdatingThumbnails = false
     var isReceivingGesture: Bool = false
-    
-    public enum ABTimeViewPosition{
-        case top
-        case bottom
-    }
     
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -81,7 +76,7 @@ public class VideoRangeSlider: UIView, UIGestureRecognizerDelegate {
         let startDrag = UIPanGestureRecognizer(target:self,
                                                action: #selector(startDragged(recognizer:)))
         
-        startIndicator = ABStartIndicator(frame: CGRect(x: 0,
+        startIndicator = StartIndicatorView(frame: CGRect(x: 0,
                                                         y: -topBorderHeight,
                                                         width: 20,
                                                         height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
@@ -94,7 +89,7 @@ public class VideoRangeSlider: UIView, UIGestureRecognizerDelegate {
         let endDrag = UIPanGestureRecognizer(target:self,
                                              action: #selector(endDragged(recognizer:)))
         
-        endIndicator = ABEndIndicator(frame: CGRect(x: 0,
+        endIndicator = EndIndicatorView(frame: CGRect(x: 0,
                                                     y: -topBorderHeight,
                                                     width: indicatorWidth,
                                                     height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
@@ -105,13 +100,13 @@ public class VideoRangeSlider: UIView, UIGestureRecognizerDelegate {
         
         // Setup Top and bottom line
         
-        topLine = ABBorder(frame: CGRect(x: 0,
+        topLine = BorderView(frame: CGRect(x: 0,
                                          y: -topBorderHeight,
                                          width: indicatorWidth,
                                          height: topBorderHeight))
         self.addSubview(topLine)
         
-        bottomLine = ABBorder(frame: CGRect(x: 0,
+        bottomLine = BorderView(frame: CGRect(x: 0,
                                             y: self.frame.size.height,
                                             width: indicatorWidth,
                                             height: bottomBorderHeight))
@@ -127,7 +122,7 @@ public class VideoRangeSlider: UIView, UIGestureRecognizerDelegate {
         let progressDrag = UIPanGestureRecognizer(target:self,
                                                   action: #selector(progressDragged(recognizer:)))
         
-        progressIndicator = ABProgressIndicator(frame: CGRect(x: 0,
+        progressIndicator = ProgressIndicatorView(frame: CGRect(x: 0,
                                                               y: -topBorderHeight,
                                                               width: 10,
                                                               height: self.frame.size.height + bottomBorderHeight + topBorderHeight))
@@ -192,19 +187,8 @@ public class VideoRangeSlider: UIView, UIGestureRecognizerDelegate {
         self.bottomLine.imageView.image = image
     }
     
-    public func setTimeViewPosition(position: ABTimeViewPosition){
-        switch position {
-        case .top:
-            
-            break
-        case .bottom:
-            
-            break
-        }
-    }
-    
     public func setVideoURL(videoURL: URL){
-        self.duration = ABVideoHelper.videoDuration(videoURL: videoURL)
+        self.duration = VideoHelper.videoDuration(videoURL: videoURL)
         self.videoURL = videoURL
         self.superview?.layoutSubviews()
         self.updateThumbnails()

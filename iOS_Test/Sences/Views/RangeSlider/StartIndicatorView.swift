@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ABStartIndicator: LeftRadiousView {
+class StartIndicatorView: LeftRadiousView {
     
     var imageView = UIImageView()
     

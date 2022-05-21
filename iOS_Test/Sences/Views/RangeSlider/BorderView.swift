@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ABBorder: UIView {
+class BorderView: UIView {
 
     var imageView = UIImageView()
     

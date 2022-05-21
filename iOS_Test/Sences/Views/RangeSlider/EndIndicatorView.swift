@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ABEndIndicator: RightRadiousView {
+class EndIndicatorView: RightRadiousView {
     
     public var imageView = UIImageView()
     
