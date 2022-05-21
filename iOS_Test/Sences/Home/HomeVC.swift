@@ -9,8 +9,8 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    var coordinator: HomeCoordinator?
-    var videoPicker: VideoPicker!
+    public var coordinator: HomeCoordinator?
+    private var videoPicker: VideoPicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
