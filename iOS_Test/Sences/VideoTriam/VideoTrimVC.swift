@@ -16,13 +16,15 @@ class VideoTrimVC: UIViewController {
     @IBOutlet var videoRangeSlider: VideoRangeSlider!
     @IBOutlet weak var startIndicatorLebel: UILabel!
     @IBOutlet weak var endIndicatorLebel: UILabel!
-    
+    @IBOutlet weak var exportButton: ExportButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     public var coordinator: VideoTrimCoordinator?
     public var url: URL?
     private(set) var thumbnailDataSource: CollectionViewDataSource<ThumbCollViewCell,ThumbVm>!
     private(set) var thumbs : [ThumbVm] = [ThumbVm]()
-    
+    private let editor = VideoEditor()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +48,7 @@ class VideoTrimVC: UIViewController {
         videoRangeSlider.setStartPosition(seconds: 0.0)
         self.startIndicatorLebel.text = STARTVALUE.addString(UNIT)
         self.endIndicatorLebel.text = videoRangeSlider.duration.float64ToString().addString(UNIT)
+        self.exportButton.endingPoint = videoRangeSlider.duration
     }
     
     //MARK: - setUpBinding -
@@ -71,6 +74,18 @@ class VideoTrimVC: UIViewController {
         self.coordinator?.popViewController()
     }
     
+    @IBAction func exportVideoBttonPressed(_ sender: ExportButton) {
+        
+        guard let startTime = sender.startingPoint, let endTime = sender.endingPoint,let videeoUrl = self.url else {
+            return
+        }
+        self.activityIndicator.startAnimating()
+        self.editor.editVideoWith(videoURL: videeoUrl, startTime: startTime, endTime: endTime, gifName: exportButton.selectedGif) { [weak self] exportedURL in
+            self?.saveVideoButtonTapped(videoUrl: exportedURL!)
+            self?.activityIndicator.stopAnimating()
+        }
+    }
+    
     deinit{
         print("deinit-VideoTrimVC")
     }
@@ -82,6 +97,8 @@ extension VideoTrimVC: VideoRangeSliderDelegate{
     // MARK: VideoRangeSlider Delegate - Returns time in seconds
     
     func didChangeValue(videoRangeSlider: VideoRangeSlider, startTime: Float64, endTime: Float64) {
+        self.exportButton.startingPoint = startTime
+        self.exportButton.endingPoint = endTime
         self.startIndicatorLebel.text = startTime.float64ToString().addString(UNIT)
         self.endIndicatorLebel.text = endTime.float64ToString().addString(UNIT)
     }
@@ -128,6 +145,7 @@ extension VideoTrimVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let gifName = self.thumbs[indexPath.row].name else { return  }
+        self.exportButton.selectedGif = gifName
         self.giferView.loadGif(asset: gifName)
     }
 }

@@ -127,11 +127,12 @@
                                                     <color key="titleColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59g-O4-QRa">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59g-O4-QRa" customClass="ExportButton" customModule="iOS_Test" customModuleProvider="target">
                                                 <rect key="frame" x="331.5" y="12" width="66.5" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Export"/>
                                                 <connections>
+                                                    <action selector="exportVideoBttonPressed:" destination="q0O-1w-1fi" eventType="touchUpInside" id="OYI-9B-JGJ"/>
                                                     <action selector="pickVideoFromGalleryBttnPressed:" destination="06D-1g-m3V" eventType="touchUpInside" id="mE3-gO-eRK"/>
                                                 </connections>
                                             </button>
@@ -177,13 +178,19 @@
                                         <rect key="frame" x="263" y="255.5" width="151" height="155"/>
                                         <color key="tintColor" red="0.4652386308" green="0.30885827539999999" blue="0.76082229609999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </imageView>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fw9-c5-KkV">
+                                        <rect key="frame" x="188.5" y="187" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Hb6-Ec-zMW" firstAttribute="width" secondItem="Q94-4d-rVH" secondAttribute="width" multiplier="0.364734" id="Beb-Qd-OKk"/>
+                                    <constraint firstItem="Fw9-c5-KkV" firstAttribute="centerX" secondItem="Q94-4d-rVH" secondAttribute="centerX" id="EIF-0c-tFg"/>
                                     <constraint firstAttribute="bottom" secondItem="Hb6-Ec-zMW" secondAttribute="bottom" id="F69-nY-dEY"/>
                                     <constraint firstAttribute="trailing" secondItem="Hb6-Ec-zMW" secondAttribute="trailing" id="L09-TA-rqX"/>
                                     <constraint firstItem="Hb6-Ec-zMW" firstAttribute="height" secondItem="Q94-4d-rVH" secondAttribute="height" multiplier="0.378121" id="a2q-T5-LFA"/>
+                                    <constraint firstItem="Fw9-c5-KkV" firstAttribute="centerY" secondItem="Q94-4d-rVH" secondAttribute="centerY" id="yf1-YP-JwJ"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CEG-ts-uTL">
@@ -313,7 +320,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="Fw9-c5-KkV" id="JFL-oW-J6k"/>
                         <outlet property="endIndicatorLebel" destination="Vus-tC-bkw" id="RhU-kO-XtA"/>
+                        <outlet property="exportButton" destination="59g-O4-QRa" id="e2I-hE-H5d"/>
                         <outlet property="giferView" destination="Hb6-Ec-zMW" id="kZe-2D-M0s"/>
                         <outlet property="gifthumbsCollectionView" destination="8kZ-2Z-Ojg" id="h8z-KL-U8s"/>
                         <outlet property="playPauseButton" destination="soK-gE-hap" id="u2W-0y-QlK"/>
