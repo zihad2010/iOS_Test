@@ -13,10 +13,9 @@ class VideoTrimVC: UIViewController {
     @IBOutlet weak var playPauseButton: PlayPauseButton!
     @IBOutlet weak var giferView: UIImageView!
     @IBOutlet weak var gifthumbsCollectionView: UICollectionView!
-    @IBOutlet var videoRangeSlider: ABVideoRangeSlider!
+    @IBOutlet var videoRangeSlider: VideoRangeSlider!
     @IBOutlet weak var startIndicatorLebel: UILabel!
     @IBOutlet weak var endIndicatorLebel: UILabel!
-    
     
     
     public var coordinator: VideoTrimCoordinator?
@@ -46,20 +45,27 @@ class VideoTrimVC: UIViewController {
         videoRangeSlider.minSpace = 1.0
         videoRangeSlider.setStartPosition(seconds: 0.0)
         self.startIndicatorLebel.text = STARTVALUE.addString(UNIT)
-        videoRangeSlider.setEndPosition(seconds: 5.0)
-        self.endIndicatorLebel.text = ENDVALUE.addString(UNIT)
-        
+        self.endIndicatorLebel.text = videoRangeSlider.duration.float64ToString().addString(UNIT)
     }
     
+    //MARK: - setUpBinding -
+    
     private func setUpBinding(){
+       
         self.showThumbCollectionView()
+       
         self.playPauseButton.action = { [weak self] isPlay in
             print(isPlay)
             isPlay ? self?.videoView.play() : self?.videoView.pause()
             self?.playPauseButton?.update(isPlay: isPlay)
         }
+        
+        self.videoView.currentProgress = { [weak self] currentProgress in
+            self?.videoRangeSlider.updateProgressIndicator(seconds: currentProgress)
+        }
     }
     
+    //MARK: - IBAction -
     
     @IBAction func cancelTrimingBttnPressed(_ sender: UIButton) {
         self.coordinator?.popViewController()
@@ -71,16 +77,18 @@ class VideoTrimVC: UIViewController {
     
 }
 
-extension VideoTrimVC: ABVideoRangeSliderDelegate{
+extension VideoTrimVC: VideoRangeSliderDelegate{
     
     // MARK: VideoRangeSlider Delegate - Returns time in seconds
     
-    func didChangeValue(videoRangeSlider: ABVideoRangeSlider, startTime: Float64, endTime: Float64) {
+    func didChangeValue(videoRangeSlider: VideoRangeSlider, startTime: Float64, endTime: Float64) {
         self.startIndicatorLebel.text = startTime.float64ToString().addString(UNIT)
         self.endIndicatorLebel.text = endTime.float64ToString().addString(UNIT)
     }
     
-    func indicatorDidChangePosition(videoRangeSlider: ABVideoRangeSlider, position: Float64) {
+    func indicatorDidChangePosition(videoRangeSlider: VideoRangeSlider, position: Float64) {
+        self.videoView.updateVideoPlayerSeek(position: position)
+        self.startIndicatorLebel.text = position.float64ToString().addString(UNIT)
         print("position of indicator: \(position)")
     }
 }

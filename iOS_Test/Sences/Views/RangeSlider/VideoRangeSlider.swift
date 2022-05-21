@@ -9,22 +9,22 @@ import Foundation
 
 import UIKit
 
-@objc public protocol ABVideoRangeSliderDelegate: AnyObject {
-    func didChangeValue(videoRangeSlider: ABVideoRangeSlider, startTime: Float64, endTime: Float64)
-    func indicatorDidChangePosition(videoRangeSlider: ABVideoRangeSlider, position: Float64)
+@objc public protocol VideoRangeSliderDelegate: AnyObject {
+    func didChangeValue(videoRangeSlider: VideoRangeSlider, startTime: Float64, endTime: Float64)
+    func indicatorDidChangePosition(videoRangeSlider: VideoRangeSlider, position: Float64)
     
     @objc optional func sliderGesturesBegan()
     @objc optional func sliderGesturesEnded()
 }
 
-public class ABVideoRangeSlider: UIView, UIGestureRecognizerDelegate {
+public class VideoRangeSlider: UIView, UIGestureRecognizerDelegate {
 
     private enum DragHandleChoice {
         case start
         case end
     }
     
-    public weak var delegate: ABVideoRangeSliderDelegate? = nil
+    public weak var delegate: VideoRangeSliderDelegate? = nil
 
     var startIndicator      = ABStartIndicator()
     var endIndicator        = ABEndIndicator()
@@ -33,6 +33,8 @@ public class ABVideoRangeSlider: UIView, UIGestureRecognizerDelegate {
     var progressIndicator   = ABProgressIndicator()
     var draggableView       = UIView()
 
+   //
+    
     public var startTimeView       = ABTimeView()
     public var endTimeView         = ABTimeView()
 

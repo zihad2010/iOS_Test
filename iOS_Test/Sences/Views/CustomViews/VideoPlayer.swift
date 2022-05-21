@@ -12,6 +12,10 @@ import AVFoundation
 
 class VideoView: UIView {
     
+   public var currentProgress: ((Float64) -> Void)? = nil
+
+   private var periodicTimeObserver:Any?
+
     public enum Repeat {
         case once
         case loop
@@ -54,8 +58,7 @@ class VideoView: UIView {
         
         self.player = AVPlayer(playerItem: AVPlayerItem(url: url))
         self.playerLayer.videoGravity = .resizeAspect
-        
-
+        self.addPreriodicTimeObsever()
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.itemDidPlayToEndTime(_:)),
@@ -66,9 +69,20 @@ class VideoView: UIView {
                                                selector: #selector(self.itemFailedToPlayToEndTime(_:)),
                                                name: .AVPlayerItemFailedToPlayToEndTime,
                                                object: self.player?.currentItem)
+                                                     
+    }
+    
+    func addPreriodicTimeObsever() {
         
+        if let periodicTimeObserver = self.periodicTimeObserver {
+            self.player?.removeTimeObserver(periodicTimeObserver)
+            self.periodicTimeObserver = nil
+        }
         
-                                             
+        periodicTimeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(value: CMTimeValue(1), timescale: 2), queue: DispatchQueue.main) {[weak self] (progressTime) in
+            self?.currentProgress?(CMTimeGetSeconds(progressTime))
+            print("periodic time: \(CMTimeGetSeconds(progressTime))")
+        }
     }
     
     @objc func itemDidPlayToEndTime(_ notification: NSNotification) {
@@ -115,6 +129,14 @@ class VideoView: UIView {
                                                   object: self.player?.currentItem)
         
         self.player = nil
+    }
+}
+
+extension VideoView {
+    
+    public func updateVideoPlayerSeek(position: Float64){
+        let selectedTime: CMTime = CMTimeMake(value: Int64(position * 1000 as Float64), timescale: 1000)
+        self.player?.seek(to: selectedTime)
     }
 }
 
