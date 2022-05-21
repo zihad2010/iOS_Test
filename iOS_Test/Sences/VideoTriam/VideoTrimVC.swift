@@ -17,31 +17,32 @@ class VideoTrimVC: UIViewController {
     @IBOutlet weak var startIndicatorLebel: UILabel!
     @IBOutlet weak var endIndicatorLebel: UILabel!
     @IBOutlet weak var exportButton: ExportButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    private let activity = ActivityIndicator()
     public var coordinator: VideoTrimCoordinator?
     public var url: URL?
     private(set) var thumbnailDataSource: CollectionViewDataSource<ThumbCollViewCell,ThumbVm>!
     private(set) var thumbs : [ThumbVm] = [ThumbVm]()
     private let editor = VideoEditor()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setUpBinding()
+        self.thumbsList()
+        self.setUpView()
+    }
+    
+    private func setUpView(){
         guard let url = self.url else {
             return
         }
         self.videoView.url = url
-        self.setUpBinding()
-        self.thumbsList()
-        self.showTrimView()
+        self.showTrimView(url: url)
     }
     
-    private func showTrimView(){
+    private func showTrimView(url: URL){
         
-        guard let url = self.url else {
-            return
-        }
         videoRangeSlider.setVideoURL(videoURL:url)
         videoRangeSlider.delegate = self
         videoRangeSlider.minSpace = 1.0
@@ -54,17 +55,21 @@ class VideoTrimVC: UIViewController {
     //MARK: - setUpBinding -
     
     private func setUpBinding(){
-       
+        
         self.showThumbCollectionView()
-       
+        
         self.playPauseButton.action = { [weak self] isPlay in
-            isPlay ? self?.videoView.play() : self?.videoView.pause()
-            self?.playPauseButton?.update(isPlay: isPlay)
+            self?.videoisPlay(isPlay: isPlay)
         }
         
         self.videoView.currentProgress = { [weak self] currentProgress in
             self?.videoRangeSlider.updateProgressIndicator(seconds: currentProgress)
         }
+    }
+    
+    private func videoisPlay(isPlay: Bool){
+        isPlay ? self.videoView.play() : self.videoView.pause()
+        self.playPauseButton?.update(isPlay: isPlay)
     }
     
     //MARK: - IBAction -
@@ -78,10 +83,11 @@ class VideoTrimVC: UIViewController {
         guard let startTime = sender.startingPoint, let endTime = sender.endingPoint,let videeoUrl = self.url else {
             return
         }
-        self.activityIndicator.startAnimating()
+        self.videoisPlay(isPlay: false)
+        self.activity.showLoading(view: self.view)
         self.editor.editVideoWith(videoURL: videeoUrl, startTime: startTime, endTime: endTime, gifName: exportButton.selectedGif) { [weak self] exportedURL in
             self?.saveVideoButtonTapped(videoUrl: exportedURL!)
-            self?.activityIndicator.stopAnimating()
+            self?.activity.hideLoading()
         }
     }
     
@@ -104,7 +110,7 @@ extension VideoTrimVC: VideoRangeSliderDelegate{
     func indicatorDidChangePosition(videoRangeSlider: VideoRangeSlider, position: Float64) {
         self.videoView.updateVideoPlayerSeek(position: position)
         self.startIndicatorLebel.text = position.float64ToString().addString(UNIT)
-       // print("position of indicator: \(position)")
+        // print("position of indicator: \(position)")
     }
 }
 
