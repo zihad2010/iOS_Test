@@ -2,7 +2,7 @@
 //  HomeCoordinator.swift
 //  iOS_Test
 //
-//  Created by Maya on 19/5/22.
+//  Created by Md. Asraful Alam on 19/5/22.
 //
 
 import Foundation
@@ -28,7 +28,15 @@ final class HomeCoordinator: Coordinator,CoordinatorProtocol {
     }
     
     func navigateToVideoTrimVCWith(videoUrl: URL){
+        self.sanityCheck()
         let coordinator = VideoTrimCoordinator(navigationController: self.navigationController,url: videoUrl)
+        addChild(coordinator)
         coordinator.start()
+    }
+}
+
+extension HomeCoordinator{
+    func sanityCheck() {
+       print(childCoordinators)
     }
 }
