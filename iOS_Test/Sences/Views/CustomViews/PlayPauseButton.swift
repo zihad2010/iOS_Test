@@ -22,9 +22,6 @@ class PlayPauseButton: UIButton {
         }
     }
     
-    deinit{
-        print("deinit-PlayPauseButton")
-    }
     override func awakeFromNib() {
         self.addTarget(
             self,

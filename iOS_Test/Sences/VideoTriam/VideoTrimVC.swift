@@ -58,7 +58,6 @@ class VideoTrimVC: UIViewController {
         self.showThumbCollectionView()
        
         self.playPauseButton.action = { [weak self] isPlay in
-            print(isPlay)
             isPlay ? self?.videoView.play() : self?.videoView.pause()
             self?.playPauseButton?.update(isPlay: isPlay)
         }
@@ -89,12 +88,11 @@ class VideoTrimVC: UIViewController {
     deinit{
         print("deinit-VideoTrimVC")
     }
-    
 }
 
+// MARK: - VideoRangeSlider Delegate - Returns time in seconds-
+
 extension VideoTrimVC: VideoRangeSliderDelegate{
-    
-    // MARK: VideoRangeSlider Delegate - Returns time in seconds
     
     func didChangeValue(videoRangeSlider: VideoRangeSlider, startTime: Float64, endTime: Float64) {
         self.exportButton.startingPoint = startTime
@@ -106,7 +104,7 @@ extension VideoTrimVC: VideoRangeSliderDelegate{
     func indicatorDidChangePosition(videoRangeSlider: VideoRangeSlider, position: Float64) {
         self.videoView.updateVideoPlayerSeek(position: position)
         self.startIndicatorLebel.text = position.float64ToString().addString(UNIT)
-        print("position of indicator: \(position)")
+       // print("position of indicator: \(position)")
     }
 }
 

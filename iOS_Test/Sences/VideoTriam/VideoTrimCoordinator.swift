@@ -34,5 +34,4 @@ final class VideoTrimCoordinator: Coordinator,CoordinatorProtocol {
     func popViewController() {
         self.navigationController.popViewController(animated: true)
     }
-    
 }

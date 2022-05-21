@@ -29,7 +29,6 @@ extension HomeVC: VideoPickerDelegate {
             return
         }
         self.coordinator?.navigateToVideoTrimVCWith(videoUrl: url)
-        print(url)
     }
 }
 
