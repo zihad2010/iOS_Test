@@ -358,7 +358,6 @@ extension VideoRangeSlider {
             _ = self.thumbnailsManager.createThumbnailsFromVideo(view: self, videoURL: self.videoURL, duration: self.duration)
         }
     }
-    
 }
 
 private enum DragType {

@@ -61,6 +61,7 @@ class VideoTrimVC: UIViewController {
         
         self.playPauseButton.action = { [weak self] isPlay in
             self?.videoisPlay(isPlay: isPlay)
+            self?.videoView.repeat = .loop
         }
         
         self.videoView.currentProgress = { [weak self] currentProgress in
