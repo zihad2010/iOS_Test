@@ -11,6 +11,8 @@ import AVFoundation
 
 class VideoTrimVC: UIViewController {
     
+    @IBOutlet weak var gifViewBottomConstant: NSLayoutConstraint!
+    @IBOutlet weak var gipViewTrailConstant: NSLayoutConstraint!
     @IBOutlet weak var videoView: VideoView!
     @IBOutlet weak var playPauseButton: PlayPauseButton!
     @IBOutlet weak var giferView: UIImageView!
@@ -41,15 +43,11 @@ class VideoTrimVC: UIViewController {
         }
         self.videoView.url = url
         self.showTrimView(url: url)
-        
-        let videoAssetSource = AVAsset.init(url: url)
-        print("size:",videoAssetSource.videoSize())
-
     }
     
     private func showTrimView(url: URL){
         
-        videoRangeSlider.setVideoURL(videoURL:url)
+        videoRangeSlider.videoURL = url
         videoRangeSlider.delegate = self
         self.endIndicatorLebel.text = videoRangeSlider.duration.float64ToString().addString(UNIT)
         self.exportButton.endingPoint = videoRangeSlider.duration
@@ -113,7 +111,6 @@ extension VideoTrimVC: VideoRangeSliderDelegate{
     func indicatorDidChangePosition(videoRangeSlider: VideoRangeSlider, position: Float64) {
         self.videoView.updateVideoPlayerSeek(position: position)
         self.startIndicatorLebel.text = position.float64ToString().addString(UNIT)
-        // print("position of indicator: \(position)")
     }
 }
 

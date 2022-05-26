@@ -60,6 +60,7 @@ class VideoView: UIView {
         self.playerLayer.videoGravity = .resizeAspect
         self.addPreriodicTimeObsever()
         
+        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.itemDidPlayToEndTime(_:)),
                                                name: .AVPlayerItemDidPlayToEndTime,

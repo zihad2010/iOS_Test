@@ -1,5 +1,5 @@
 //
-//  EndIndicator.swift
+//  RightIndicatorView.swift
 //  iOS_Test
 //
 //  Created by Md. Asraful Alam on 20/5/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EndIndicatorView: RightRadiousView {
+class RightIndicatorView: RightRadiousView {
     
     public var imageView = UIImageView()
     

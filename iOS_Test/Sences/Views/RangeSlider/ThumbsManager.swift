@@ -1,5 +1,5 @@
 //
-//  ThumbnailsManager.swift
+//  ThumbsManager.swift
 //  iOS_Test
 //
 //  Created by Md. Asraful Alam on 20/5/22.
@@ -8,10 +8,10 @@
 import UIKit
 import AVFoundation
 
-class ThumbnailsManager: NSObject {
+class ThumbsManager: NSObject {
     
     var thumbnailViews = [UIImageView]()
-
+    
     private func addImagesToView(images: [UIImage], view: UIView){
         
         self.thumbnailViews.removeAll()
@@ -35,7 +35,6 @@ class ThumbnailsManager: NSObject {
                                          height: view.frame.size.height)
                 self.thumbnailViews.append(imageView)
                 
-                
                 view.addSubview(imageView)
                 UIView.animate(withDuration: 0.2, animations: {() -> Void in
                     imageView.alpha = 1.0
@@ -53,15 +52,14 @@ class ThumbnailsManager: NSObject {
         DispatchQueue.main.sync {
             num = Double(inView.frame.size.width) / Double(inView.frame.size.height)
         }
-
+        
         return Int(ceil(num))
     }
     
-    func updateThumbnails(view: UIView, videoURL: URL, duration: Float64) -> [UIImageView]{
-
+    func createThumbnailsFromVideo(view: UIView, videoURL: URL, duration: Float64) -> [UIImageView]{
+        
         var thumbnails = [UIImage]()
         var offset: Float64 = 0
-
         
         for view in self.thumbnailViews{
             DispatchQueue.main.sync
@@ -73,8 +71,8 @@ class ThumbnailsManager: NSObject {
         let imagesCount = self.thumbnailCount(inView: view)
         
         for i in 0..<imagesCount{
-            let thumbnail = VideoHelper.thumbnailFromVideo(videoUrl: videoURL,
-                                                             time: CMTimeMake(value: Int64(offset), timescale: 1))
+            let thumbnail = self.thumbnailFromVideo(videoUrl: videoURL,
+                                                    time: CMTimeMake(value: Int64(offset), timescale: 1))
             offset = Float64(i) * (duration / Float64(imagesCount))
             thumbnails.append(thumbnail)
         }
@@ -82,4 +80,19 @@ class ThumbnailsManager: NSObject {
         self.addImagesToView(images: thumbnails, view: view)
         return self.thumbnailViews
     }
+    
+    private func thumbnailFromVideo(videoUrl: URL, time: CMTime) -> UIImage{
+        let asset: AVAsset = AVAsset(url: videoUrl) as AVAsset
+        let imgGenerator = AVAssetImageGenerator(asset: asset)
+        imgGenerator.appliesPreferredTrackTransform = true
+        do{
+            let cgImage = try imgGenerator.copyCGImage(at: time, actualTime: nil)
+            let uiImage = UIImage(cgImage: cgImage)
+            return uiImage
+        }catch{
+            
+        }
+        return UIImage()
+    }
+    
 }

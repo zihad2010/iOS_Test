@@ -9,6 +9,12 @@ import AVKit
 import AVFoundation
 
 extension AVAsset {
+    
+     func videoDuration(videoURL: URL) -> Float64{
+        let source = AVURLAsset(url: videoURL)
+        return CMTimeGetSeconds(source.duration)
+    }
+
     func videoSize()->CGSize{
         let tracks = self.tracks(withMediaType: AVMediaType.video)
         if (tracks.count > 0){

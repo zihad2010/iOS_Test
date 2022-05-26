@@ -316,8 +316,10 @@
                     <connections>
                         <outlet property="endIndicatorLebel" destination="Vus-tC-bkw" id="RhU-kO-XtA"/>
                         <outlet property="exportButton" destination="59g-O4-QRa" id="e2I-hE-H5d"/>
+                        <outlet property="gifViewBottomConstant" destination="F69-nY-dEY" id="8aE-H5-857"/>
                         <outlet property="giferView" destination="Hb6-Ec-zMW" id="kZe-2D-M0s"/>
                         <outlet property="gifthumbsCollectionView" destination="8kZ-2Z-Ojg" id="h8z-KL-U8s"/>
+                        <outlet property="gipViewTrailConstant" destination="L09-TA-rqX" id="LGb-gT-iRc"/>
                         <outlet property="playPauseButton" destination="soK-gE-hap" id="u2W-0y-QlK"/>
                         <outlet property="startIndicatorLebel" destination="Nn3-hF-1df" id="F7C-QM-jeo"/>
                         <outlet property="videoRangeSlider" destination="6Fs-7F-o9b" id="jzB-7t-X1b"/>
