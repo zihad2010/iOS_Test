@@ -16,7 +16,7 @@ class ThumbCollViewCell: UICollectionViewCell {
     var eachThumb: ThumbVm! {
         didSet{
             guard let thumb = eachThumb.name else { return }
-            self.thumbImageView.image = UIImage(named: thumb.addString(".GIF"))
+            self.thumbImageView.loadGif(asset: thumb)
         }
     }
 }

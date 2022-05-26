@@ -79,7 +79,6 @@ class ThumbnailsManager: NSObject {
             thumbnails.append(thumbnail)
         }
         
-        
         self.addImagesToView(images: thumbnails, view: view)
         return self.thumbnailViews
     }

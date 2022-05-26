@@ -8,7 +8,7 @@
 import UIKit
 
 class BorderView: UIView {
-
+    
     var imageView = UIImageView()
     
     override init(frame: CGRect) {
@@ -27,5 +27,4 @@ class BorderView: UIView {
         super.layoutSubviews()
         imageView.frame = self.bounds
     }
-
 }

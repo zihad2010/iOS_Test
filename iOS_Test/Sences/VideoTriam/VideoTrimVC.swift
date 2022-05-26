@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class VideoTrimVC: UIViewController {
     
@@ -39,15 +41,16 @@ class VideoTrimVC: UIViewController {
         }
         self.videoView.url = url
         self.showTrimView(url: url)
+        
+        let videoAssetSource = AVAsset.init(url: url)
+        print("size:",videoAssetSource.videoSize())
+
     }
     
     private func showTrimView(url: URL){
         
         videoRangeSlider.setVideoURL(videoURL:url)
         videoRangeSlider.delegate = self
-        videoRangeSlider.minSpace = 1.0
-        videoRangeSlider.setStartPosition(seconds: 0.0)
-        self.startIndicatorLebel.text = STARTVALUE.addString(UNIT)
         self.endIndicatorLebel.text = videoRangeSlider.duration.float64ToString().addString(UNIT)
         self.exportButton.endingPoint = videoRangeSlider.duration
     }

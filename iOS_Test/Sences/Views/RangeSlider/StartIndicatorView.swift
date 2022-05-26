@@ -19,7 +19,7 @@ class StartIndicatorView: LeftRadiousView {
         imageView.contentMode = UIView.ContentMode.scaleAspectFit
         self.addSubview(imageView)
         self.backgroundColor = UIColor(red: 119.0/255, green: 79.0/255, blue: 194.0/255, alpha: 1.0)
-
+        
     }
 
     required init?(coder aDecoder: NSCoder) {

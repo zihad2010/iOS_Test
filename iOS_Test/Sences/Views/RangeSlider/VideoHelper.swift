@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 class VideoHelper: NSObject {
-
+    
     static func thumbnailFromVideo(videoUrl: URL, time: CMTime) -> UIImage{
         let asset: AVAsset = AVAsset(url: videoUrl) as AVAsset
         let imgGenerator = AVAssetImageGenerator(asset: asset)
