@@ -25,8 +25,8 @@ public class VideoRangeSlider: UIView {
     
     private var startIndicator      = StartIndicatorView()
     private var endIndicator        = EndIndicatorView()
-    private var topLine             = BorderView()
-    private var bottomLine          = BorderView()
+    private var topLine             = LineView()
+    private var bottomLine          = LineView()
     private var progressIndicator   = ProgressIndicatorView()
     
     let thumbnailsManager   = ThumbnailsManager()
@@ -34,16 +34,15 @@ public class VideoRangeSlider: UIView {
     var videoURL            = URL(fileURLWithPath: "")
     
     var progressPercentage: CGFloat = 0
-    private var startPercentage: CGFloat    = 0
-    private var endPercentage: CGFloat      = 100
-    
-    private let topBorderHeight: CGFloat      = 5
-    private  let bottomBorderHeight: CGFloat   = 5
-    
-    private let indicatorWidth: CGFloat = 20.0
-    
     private var minSpace: Float = 1
     private var maxSpace: Float = 0
+    private var startPercentage: CGFloat    = 0
+    private var endPercentage: CGFloat      = 100
+   
+    private let topBorderHeight: CGFloat      = 5
+    private  let bottomBorderHeight: CGFloat   = 5
+    private let indicatorWidth: CGFloat = 20.0
+    
             
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -86,13 +85,13 @@ public class VideoRangeSlider: UIView {
         self.addSubview(endIndicator)
         
         
-        topLine = BorderView(frame: CGRect(x: 0,
+        topLine = LineView(frame: CGRect(x: 0,
                                            y: -topBorderHeight,
                                            width: indicatorWidth,
                                            height: topBorderHeight))
         self.addSubview(topLine)
         
-        bottomLine = BorderView(frame: CGRect(x: 0,
+        bottomLine = LineView(frame: CGRect(x: 0,
                                               y: self.frame.size.height,
                                               width: indicatorWidth,
                                               height: bottomBorderHeight))

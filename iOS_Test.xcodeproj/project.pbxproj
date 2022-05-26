@@ -49,7 +49,7 @@
 		6C993F012837B41400A14C1C /* StartIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993F002837B41400A14C1C /* StartIndicatorView.swift */; };
 		6C993F032837B46D00A14C1C /* ProgressIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993F022837B46D00A14C1C /* ProgressIndicatorView.swift */; };
 		6C993F052837B49A00A14C1C /* EndIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993F042837B49A00A14C1C /* EndIndicatorView.swift */; };
-		6C993F072837B4C200A14C1C /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993F062837B4C200A14C1C /* BorderView.swift */; };
+		6C993F072837B4C200A14C1C /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C993F062837B4C200A14C1C /* LineView.swift */; };
 		6CADB7DC283F6E32004FB0A3 /* AVAssetExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CADB7DB283F6E32004FB0A3 /* AVAssetExt.swift */; };
 		6CAF1B482839306700042E58 /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF1B472839306700042E58 /* VideoEditor.swift */; };
 		6CAF1B4A2839426500042E58 /* ExportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CAF1B492839426500042E58 /* ExportButton.swift */; };
@@ -122,7 +122,7 @@
 		6C993F002837B41400A14C1C /* StartIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartIndicatorView.swift; sourceTree = "<group>"; };
 		6C993F022837B46D00A14C1C /* ProgressIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressIndicatorView.swift; sourceTree = "<group>"; };
 		6C993F042837B49A00A14C1C /* EndIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndIndicatorView.swift; sourceTree = "<group>"; };
-		6C993F062837B4C200A14C1C /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		6C993F062837B4C200A14C1C /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		6CADB7DB283F6E32004FB0A3 /* AVAssetExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAssetExt.swift; sourceTree = "<group>"; };
 		6CAF1B472839306700042E58 /* VideoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		6CAF1B492839426500042E58 /* ExportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportButton.swift; sourceTree = "<group>"; };
@@ -363,7 +363,7 @@
 				6C993F002837B41400A14C1C /* StartIndicatorView.swift */,
 				6C993F022837B46D00A14C1C /* ProgressIndicatorView.swift */,
 				6C993F042837B49A00A14C1C /* EndIndicatorView.swift */,
-				6C993F062837B4C200A14C1C /* BorderView.swift */,
+				6C993F062837B4C200A14C1C /* LineView.swift */,
 				6C925C79283846C700151A56 /* LeftRadiousView.swift */,
 				6C925C7B283846E000151A56 /* RightRadiousView.swift */,
 			);
@@ -523,7 +523,7 @@
 				6C3C42382836043100971236 /* UIViewControllerExt.swift in Sources */,
 				6C5E9B282835F88600F25F13 /* AppCoordinator.swift in Sources */,
 				6C584E0B2836486800575053 /* VideoTrimCoordinator.swift in Sources */,
-				6C993F072837B4C200A14C1C /* BorderView.swift in Sources */,
+				6C993F072837B4C200A14C1C /* LineView.swift in Sources */,
 				6CAF1B482839306700042E58 /* VideoEditor.swift in Sources */,
 				6C5E9AFB2835F83A00F25F13 /* HomeVC.swift in Sources */,
 				6C3C42282835FF7B00971236 /* CoordinatorProtocol.swift in Sources */,
