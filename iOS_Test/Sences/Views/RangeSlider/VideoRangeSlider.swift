@@ -44,12 +44,7 @@ public class VideoRangeSlider: UIView {
     
     private var minSpace: Float = 1
     private var maxSpace: Float = 0
-    
-    public var isProgressIndicatorSticky: Bool = false
-    public var isProgressIndicatorDraggable: Bool = true
-    
-    var isReceivingGesture: Bool = false
-    
+            
     override public func awakeFromNib() {
         super.awakeFromNib()
         self.setup()
@@ -117,17 +112,14 @@ public class VideoRangeSlider: UIView {
     // MARK: Public functions
     
     public func updateProgressIndicator(seconds: Float64){
-        if !isReceivingGesture {
-            let endSeconds = secondsFromValue(value: self.endPercentage)
-            
-            if seconds >= endSeconds {
-                self.resetProgressPosition()
-            } else {
-                self.progressPercentage = self.valueFromSeconds(seconds: Float(seconds))
-            }
-            
-            layoutSubviews()
+        let endSeconds = secondsFromValue(value: self.endPercentage)
+        
+        if seconds >= endSeconds {
+            self.resetProgressPosition()
+        } else {
+            self.progressPercentage = self.valueFromSeconds(seconds: Float(seconds))
         }
+        layoutSubviews()
     }
     
     public func setVideoURL(videoURL: URL){
@@ -173,7 +165,7 @@ public class VideoRangeSlider: UIView {
         
         let translation = recognizer.translation(in: self)
         
-        var position: CGFloat = positionFromValue(value: currentPositionPercentage) // self.startPercentage or self.endPercentage
+        var position: CGFloat = positionFromValue(value: currentPositionPercentage) 
         
         position = position + translation.x
         
@@ -242,9 +234,6 @@ public class VideoRangeSlider: UIView {
     }
     
     @objc func progressDragged(recognizer: UIPanGestureRecognizer){
-        if !isProgressIndicatorDraggable {
-            return
-        }
         
         let translation = recognizer.translation(in: self)
         
